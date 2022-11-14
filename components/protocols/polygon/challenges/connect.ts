@@ -12,7 +12,7 @@ const connect = async () => {
       //           01 or if Metamask is unlocked, connect an account to the page
 
       const signer = provider.getSigner(); // get :signer the current connected account
-      const address = signer.getAddress();
+      const address = await signer.getAddress(); // CAUTION mind the await keyword is required
 
       return {
         address,
@@ -28,5 +28,4 @@ const connect = async () => {
     };
   }
 };
-
 export default connect;
