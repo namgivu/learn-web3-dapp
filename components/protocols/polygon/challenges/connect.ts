@@ -6,7 +6,7 @@ declare let window: {
 
 const connect = async () => {
   try {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
     if (provider) {
       await provider.send('eth_requestAccounts', []); // this will 00 bring up a Metamask dialog, asking user to unlock their Metamask if it is locked
       //                                               //           01 or if Metamask is unlocked, connect an account to the page

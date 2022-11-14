@@ -2,11 +2,11 @@ import {ethers} from 'ethers';
 
 declare let window: {
   ethereum: ethers.providers.ExternalProvider;
-};
+}
 
 const query = async () => {
   try {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
 
     // get :network :chainId
     const networkName = await provider.getNetwork().then((r_network) => {
@@ -15,8 +15,8 @@ const query = async () => {
     const chainId = provider.network.chainId;
 
     // get latest block :blockInfo at :blockHeight=latest
-    const blockHeight = await provider.getBlockNumber();
-    const blockInfo = await provider.getBlockWithTransactions(blockHeight);
+    const blockHeight = await provider.getBlockNumber()
+    const blockInfo   = await provider.getBlockWithTransactions(blockHeight)
 
     // get :gasPriceAsGwei
     const gasPriceAsGwei = await provider.getGasPrice().then((r_gasPrice) => {
