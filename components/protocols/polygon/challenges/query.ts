@@ -9,7 +9,7 @@ const query = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
 
     // get :network :chainId
-    const networkName = await provider.getNetwork().then((r_network) => {r_network.name})
+    const networkName = await provider.getNetwork().then((r_network) => {return r_network.name})
     const chainId     = await provider.network.chainId
 
     // get latest block :blockInfo at :blockHeight=latest
