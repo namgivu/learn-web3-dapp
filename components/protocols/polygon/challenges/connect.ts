@@ -19,14 +19,10 @@ const connect = async () => {
       }
 
     } else {
-      return {
-        error: 'Please install Metamask at https://metamask.io',
-      };
+      return {error: 'Please install Metamask at https://metamask.io'}
     }
   } catch (error) {
-    return {
-      error: 'An unexpected error occurs',
-    };
+    return {error: 'An unexpected error occurs'}
   }
 };
 export default connect;
