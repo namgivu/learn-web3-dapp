@@ -21,7 +21,7 @@ const query = async () => {
     const gasPriceAsGwei = await ethers.utils.formatUnits(gasPrice, 'gwei')
 
     if (!chainId || !blockHeight || !gasPriceAsGwei || !blockInfo) {
-      throw new Error('Please complete the code');
+      throw new Error('Please complete the code')
     }
 
     return {
@@ -32,11 +32,10 @@ const query = async () => {
         gasPriceAsGwei,
         blockInfo,
       },
-    };
+    }
+
   } catch (error) {
-    return {
-      error: error.message,
-    };
+    return {error: error.message}
   }
 };
 
