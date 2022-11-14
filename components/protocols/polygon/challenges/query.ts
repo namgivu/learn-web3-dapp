@@ -10,7 +10,7 @@ const query = async () => {
 
     // get :network :chainId
     const networkName = await provider.getNetwork().then((r_network) => {r_network.name})
-    const chainId     = provider.network.chainId
+    const chainId     = await provider.network.chainId
 
     // get latest block :blockInfo at :blockHeight=latest
     const blockHeight = await provider.getBlockNumber()
@@ -18,7 +18,7 @@ const query = async () => {
 
     // get :gasPriceAsGwei
     const gasPrice       = await provider.getGasPrice()
-    const gasPriceAsGwei = ethers.utils.formatUnits(gasPrice, 'gwei')
+    const gasPriceAsGwei = await ethers.utils.formatUnits(gasPrice, 'gwei')
 
     if (!chainId || !blockHeight || !gasPriceAsGwei || !blockInfo) {
       throw new Error('Please complete the code');
