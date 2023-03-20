@@ -9,10 +9,10 @@ const connect = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     if (provider) {
       await provider.send('eth_requestAccounts', [])  // this will 00 bring up a Metamask dialog, asking user to unlock their Metamask if it is locked
-      //                                              //           01 or if Metamask is unlocked, connect an account to the page
+      //                                              //           01 or if Metamask is unlocked, open page @ connect an account
 
       const signer  = await provider.getSigner()  // get :signer the `current connected account`
-      const address = await signer.getAddress()   // get signer's account hash/address  //CAUTION mind the await keyword is required
+      const address = await signer.getAddress()   // get signer's account hash/address  //CAUTION mind the await keyword
 
       return {
         address,
