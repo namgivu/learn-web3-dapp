@@ -21,7 +21,7 @@ const transfer = async () => {
     const transaction = {
       from: sender_account,
       to: RECIPIENT,
-      value: ethers.utils.parseEther(AMOUNT), //TODO why need parseEther() insteadof direct value :AMOUNT
+      value: ethers.utils.parseEther(AMOUNT), //TODO why need parseEther() insteadof direct value : AMOUNT
 
       gasPrice: gasPrice,
       gasLimit: gasLimit,
