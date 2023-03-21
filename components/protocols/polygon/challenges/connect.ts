@@ -11,8 +11,8 @@ const connect = async () => {
       await provider.send('eth_requestAccounts', [])  // this will 00 bring up a Metamask dialog, asking user to unlock their Metamask if it is locked
       //                                              //           01 or if Metamask is unlocked, open page @ connect an account
 
-      const signer  = await provider.getSigner()  // get :signer the `current connected account`
-      const address = await signer.getAddress()   // get signer's account hash/address  //CAUTION mind the await keyword
+      const signer  = await provider.getSigner()  // get :signer aka the `current connected account`
+      const address = await signer.getAddress()   // get signer's account hash/address  //CAUTION pls mind the await keyword
 
       return {
         address,
